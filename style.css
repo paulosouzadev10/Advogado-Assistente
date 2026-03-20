@@ -62,17 +62,7 @@ body {
 
 
 
-/* FOOTER */
-.footer-main { background: var(--primary); color: #94a3b8; padding: 60px 0 20px; }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-.logo-footer { color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 10px; }
-.social-links { display: flex; gap: 15px; margin: 15px 0; }
-.social-links a { color: white; font-size: 1.2rem; }
-.footer-col h4 { color: white; margin-bottom: 15px; font-size: 0.9rem; }
-.newsletter-form { display: flex; }
-.newsletter-form input { background: #1e293b; border: none; color: white; border-radius: 4px 0 0 4px; padding: 10px; flex: 1; }
-.newsletter-form button { background: var(--accent); border: none; padding: 0 15px; border-radius: 0 4px 4px 0; font-weight: bold; cursor: pointer; }
-.footer-bottom { text-align: center; border-top: 1px solid #1e293b; padding-top: 20px; margin-top: 40px; font-size: 0.75rem; }
+
 
 
 
@@ -213,15 +203,3 @@ body {
     transform: translateY(-2px);
 }
 
-/* --- RESPONSIVIDADE PJE-CALC --- */
-
-@media (max-width: 768px) {
-    .highlight-section .form-row {
-        flex-direction: column;
-    }
-    
-    .btn-budget {
-        padding: 18px;
-        font-size: 0.95rem;
-    }
-}

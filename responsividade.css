@@ -50,3 +50,18 @@
     .newsletter-form { flex-direction: column; }
     .newsletter-form input, .newsletter-form button { border-radius: 4px; padding: 12px; }
 }
+
+
+
+/* --- RESPONSIVIDADE PJE-CALC --- */
+
+@media (max-width: 768px) {
+    .highlight-section .form-row {
+        flex-direction: column;
+    }
+    
+    .btn-budget {
+        padding: 18px;
+        font-size: 0.95rem;
+    }
+}
