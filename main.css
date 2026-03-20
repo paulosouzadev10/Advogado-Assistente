@@ -1,0 +1,94 @@
+/* LAYOUT PRINCIPAL */
+.main-layout { 
+    display: grid; 
+    grid-template-columns: 1fr 340px; 
+    gap: 25px; 
+    padding: 30px 0; 
+}
+
+.card { 
+    background: white; 
+    border-radius: 12px; 
+    padding: clamp(15px, 5%, 35px); /* Espaçamento fluido */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+}
+
+.card-header { margin-bottom: 25px; }
+.card-header h2 { font-size: 1.4rem; color: var(--primary); }
+
+/* SEÇÕES DO FORMULÁRIO */
+.form-section {
+    margin-bottom: 30px;
+    padding: clamp(15px, 4%, 25px);
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.form-section h3 {
+    font-size: 0.9rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.form-row { display: flex; gap: 15px; }
+.group { flex: 1; display: flex; flex-direction: column; margin-bottom: 15px; }
+label { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); margin-bottom: 5px; text-transform: uppercase; }
+
+input, select, textarea {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+input:focus { border-color: var(--accent); outline: none; background: white; }
+
+.btn-generate {
+    background: var(--primary);
+    color: white;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.btn-generate:hover { background: #1e293b; transform: translateY(-2px); }
+
+/* IA SIDEBAR (SISTEMA DE GAVETA NO MOBILE) */
+.ia-sidebar { 
+    background: white; 
+    border-radius: 12px; 
+    height: 650px; 
+    display: flex; 
+    flex-direction: column; 
+    position: sticky; 
+    top: 100px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    overflow: hidden; 
+}
+
+.ia-header { 
+    background: var(--primary); 
+    color: white; 
+    padding: 15px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.close-ia { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+.ia-chat { flex: 1; padding: 15px; background: #f1f5f9; overflow-y: auto; }
+.msg { background: white; padding: 12px; border-radius: 8px; border-left: 4px solid var(--accent); font-size: 0.85rem; margin-bottom: 10px; }
+
+.ia-input { padding: 15px; display: flex; gap: 8px; border-top: 1px solid var(--border); }
+.ia-input input { flex: 1; border-radius: 20px; border: 1px solid var(--border); padding: 8px 15px; }
+.ia-input button { background: var(--primary); color: white; border: none; width: 35px; border-radius: 50%; cursor: pointer; }

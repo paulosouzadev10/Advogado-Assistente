@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advogado Assistente | Sistema de Peticionamento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsividade.css">
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <i class="fas fa-balance-scale"></i>
+                <span>Advogado <strong>Assistente</strong></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Nova Petição</a></li>
+                <li><a href="#">Jurisprudência</a></li>
+                <li><button class="btn-ia-trigger" onclick="toggleIA()">
+                        <i class="fas fa-robot"></i> <span class="hide-mobile">Consultar</span> IA
+                    </button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container main-layout">
+
+        <section class="editor-section">
+            <div class="card">
+                <div class="card-header">
+                    <h2><i class="fas fa-file-signature"></i> Petição Inicial</h2>
+                </div>
+
+                <form id="formPeticao">
+                    <div class="form-section">
+                        <h3><i class="fas fa-map-marked-alt"></i> Endereçamento</h3>
+                        <div class="group">
+                            <label>Excelentíssimo Juízo de Destino</label>
+                            <input type="text" placeholder="Ex: AO JUÍZO DA ___ VARA CÍVEL DA COMARCA DE...">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-user-tie"></i> Qualificação do Autor</h3>
+                        <div class="group">
+                            <label>Nome Completo</label>
+                            <input type="text" placeholder="Nome do Requerente">
+                        </div>
+                        <div class="form-row">
+                            <div class="group">
+                                <label>Estado Civil</label>
+                                <select>
+                                    <option>Solteiro(a)</option>
+                                    <option>Casado(a)</option>
+                                    <option>Divorciado(a)</option>
+                                    <option>Viúvo(a)</option>
+                                    <option>União Estável</option>
+                                </select>
+                            </div>
+                            <div class="group">
+                                <label>Profissão</label>
+                                <input type="text" placeholder="Ex: Analista de Sistemas">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="group">
+                                <label>CPF / CNPJ</label>
+                                <input type="text" placeholder="000.000.000-00">
+                            </div>
+                            <div class="group">
+                                <label>Endereço de E-mail</label>
+                                <input type="email" placeholder="nome@email.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="group" style="flex: 2;">
+                                <label>Endereço Residencial</label>
+                                <input type="text" placeholder="Logradouro, nº, Bairro, Cidade/UF">
+                            </div>
+                            <div class="group" style="flex: 1;">
+                                <label>CEP</label>
+                                <input type="text" placeholder="00000-000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-university"></i> Qualificação do Réu</h3>
+                        <div class="group">
+                            <label>Nome ou Razão Social</label>
+                            <input type="text" placeholder="Nome do Requerido">
+                        </div>
+                        <div class="form-row">
+                            <div class="group">
+                                <label>CPF / CNPJ</label>
+                                <input type="text" placeholder="00.000.000/0001-00">
+                            </div>
+                            <div class="group">
+                                <label>Profissão / Atividade</label>
+                                <input type="text" placeholder="Ex: Instituição Bancária">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="group" style="flex: 2;">
+                                <label>Endereço de Citação</label>
+                                <input type="text" placeholder="Local para oficial de justiça">
+                            </div>
+                            <div class="group" style="flex: 1;">
+                                <label>CEP</label>
+                                <input type="text" placeholder="00000-000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-paragraph"></i> Dos Fatos e Fundamentos</h3>
+                        <div class="group">
+                            <label>Narrativa Processual</label>
+                            <textarea rows="8"
+                                placeholder="Relate os fatos para que a IA sugira a fundamentação legal e jurisprudencial..."></textarea>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-generate">
+                        <i class="fas fa-check-circle"></i> Gerar Minuta para Revisão
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <aside class="ia-sidebar" id="iaSidebar">
+            <div class="ia-header">
+                <span><i class="fas fa-robot"></i> Mentor Jurídico</span>
+                <button class="close-ia" onclick="toggleIA()">&times;</button>
+            </div>
+            <div class="ia-chat">
+                <div class="msg">
+                    <strong>Assistente:</strong> Olá, Colega. Estou monitorando o preenchimento. Caso precise de uma
+                    súmula específica do STJ ou TST para este caso, é só perguntar.
+                </div>
+            </div>
+            <div class="ia-input">
+                <input type="text" placeholder="Pergunte à IA...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </aside>
+    </main>
+    <section class="container news-section">
+        <div class="section-header">
+            <h2><i class="fas fa-newspaper"></i> Informativos e Atualizações</h2>
+            <a href="#" class="view-all">Ver clipping completo</a>
+        </div>
+
+        <div class="news-grid">
+            <article class="news-card">
+                <div class="news-tag tag-stf">STF</div>
+                <h4>Piso Nacional da Enfermagem</h4>
+                <p>Supremo Tribunal Federal define novos critérios para aplicação do piso em setores privados e
+                    públicos...</p>
+                <div class="news-footer">
+                    <span><i class="far fa-calendar-alt"></i> 19 Mar 2026</span>
+                    <a href="#">Ler mais</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-tag tag-stj">STJ</div>
+                <h4>Rol Taxativo da ANS</h4>
+                <p>Terceira Turma reafirma entendimento sobre a cobertura de tratamentos fora da lista básica da
+                    agência...</p>
+                <div class="news-footer">
+                    <span><i class="far fa-calendar-alt"></i> 18 Mar 2026</span>
+                    <a href="#">Ler mais</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-tag tag-tst">TST</div>
+                <h4>Teletrabalho e Horas Extras</h4>
+                <p>Nova decisão altera interpretação sobre o controle de jornada em regime de home office integral...
+                </p>
+                <div class="news-footer">
+                    <span><i class="far fa-calendar-alt"></i> 17 Mar 2026</span>
+                    <a href="#">Ler mais</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="footer-main">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo-footer">Advogado <strong>Assistente</strong></div>
+                <p>Produtividade e inteligência para o dia a dia forense.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Suporte Profissional</h4>
+                <p>contato@advogadoassistente.adv.br</p>
+                <p>0800-12345</p>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="E-mail">
+                    <button type="submit">OK</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Advogado Assistente. Inteligência Jurídica Aplicada.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleIA() {
+            document.getElementById('iaSidebar').classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
