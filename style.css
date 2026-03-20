@@ -21,51 +21,6 @@ body {
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
 
-/* NAVBAR RESPONSIVA */
-.navbar {
-    background: var(--primary);
-    padding: 1rem 0;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 3px solid var(--accent);
-}
-
-.nav-content { display: flex; justify-content: space-between; align-items: center; }
-
-.logo { 
-    font-size: 1.3rem; 
-    font-family: 'Playfair Display', serif; 
-    display: flex; 
-    align-items: center; 
-    gap: 8px; 
-}
-.logo i { color: var(--accent); }
-
-.nav-links { list-style: none; display: flex; gap: 20px; align-items: center; }
-.nav-links a { color: #cbd5e1; text-decoration: none; font-size: 0.85rem; font-weight: 500; }
-.nav-links a.active { color: var(--accent); }
-
-.btn-ia-trigger {
-    background: var(--accent);
-    border: none;
-    color: var(--primary);
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-weight: 700;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-
-
-
-
-
-
 /* --- SEÇÃO DE NOTÍCIAS --- */
 .news-section {
     padding: 60px 0;
@@ -164,42 +119,5 @@ body {
     color: var(--accent);
     text-decoration: none;
     font-weight: 700;
-}
-
-/* Estilo para a Seção de Destaque (PJe-Calc) */
-.highlight-section {
-    background: #fffdf5 !important; /* Amarelo bem claro para destaque */
-    border: 2px solid var(--accent) !important;
-    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.1);
-}
-
-.section-description {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 20px;
-}
-
-.label-urgent {
-    color: #b91c1c !important; /* Vermelho para indicar urgência no prazo */
-}
-
-/* Botão Específico para Orçamento */
-.btn-budget {
-    background: #047857; /* Verde Esmeralda (Remete a sucesso/dinheiro/cálculo) */
-    color: white;
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: var(--transition);
-    margin-top: 10px;
-}
-
-.btn-budget:hover {
-    background: #065f46;
-    transform: translateY(-2px);
 }
 

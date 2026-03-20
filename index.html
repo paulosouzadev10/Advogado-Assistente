@@ -13,27 +13,30 @@
     <link rel="stylesheet" href="responsividade.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="form.css">
 
 
 </head>
 
 <body>
-
-    <nav class="navbar">
-        <div class="container nav-content">
-            <div class="logo">
-                <i class="fas fa-balance-scale"></i>
-                <span>Advogado <strong>Assistente</strong></span>
+    <header>
+        <nav class="navbar">
+            <div class="container nav-content">
+                <div class="logo">
+                    <i class="fas fa-balance-scale"></i>
+                    <span>Advogado <strong>Assistente</strong></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Nova Petição</a></li>
+                    <li><a href="#Cálculos PJE-CALC">Cálculos PJE-CALC</a></li>
+                    <li><button class="btn-ia-trigger" onclick="toggleIA()">
+                            <i class="fas fa-robot"></i> <span class="hide-mobile">Consultar</span> IA
+                        </button></li>
+                </ul>
             </div>
-            <ul class="nav-links">
-                <li><a href="#" class="active">Nova Petição</a></li>
-                <li><a href="#Cálculos PJE-CALC">Cálculos PJE-CALC</a></li>
-                <li><button class="btn-ia-trigger" onclick="toggleIA()">
-                        <i class="fas fa-robot"></i> <span class="hide-mobile">Consultar</span> IA
-                    </button></li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <main class="container main-layout">
 
@@ -158,45 +161,49 @@
         </aside>
     </main>
 
-    <section id="Cálculos PJE-CALC" class="pje-calc">
-        <div class="form-section highlight-section">
-            <h3><i class="fas fa-calculator"></i> Encomendar Cálculo PJe-Calc</h3>
-            <p class="section-description">Preencha os dados abaixo para receber um orçamento de liquidação da inicial, sentença
-                ou
-                impugnação.</p>
+    <form>
+        <section id="Cálculos PJE-CALC" class="pje-calc">
+            <div class="form-section highlight-section">
+                <h3><i class="fas fa-calculator"></i> Encomendar Cálculo PJe-Calc</h3>
+                <p class="section-description">Preencha os dados abaixo para receber um orçamento de liquidação da
+                    inicial,
+                    sentença
+                    ou
+                    impugnação.</p>
 
-            <div class="form-row">
-                <div class="group" style="flex: 1.5;">
-                    <label>Número do Processo (CNJ)</label>
-                    <input type="text" placeholder="0000000-00.2026.5.00.0000">
+                <div class="form-row">
+                    <div class="group" style="flex: 1.5;">
+                        <label>Número do Processo (CNJ)</label>
+                        <input type="text" placeholder="0000000-00.2026.5.00.0000">
+                    </div>
+                    <div class="group" style="flex: 1;">
+                        <label class="label-urgent"><i class="fas fa-clock"></i> Prazo para Protocolo</label>
+                        <input type="date">
+                    </div>
                 </div>
-                <div class="group" style="flex: 1;">
-                    <label class="label-urgent"><i class="fas fa-clock"></i> Prazo para Protocolo</label>
-                    <input type="date">
-                </div>
-            </div>
 
-            <div class="form-row">
+                <div class="form-row">
+                    <div class="group">
+                        <label>E-mail para Orçamento</label>
+                        <input type="email" placeholder="seu@email.com">
+                    </div>
+                    <div class="group">
+                        <label>Telefone / WhatsApp</label>
+                        <input type="tel" placeholder="(00) 00000-0000">
+                    </div>
+                </div>
+
                 <div class="group">
-                    <label>E-mail para Orçamento</label>
-                    <input type="email" placeholder="seu@email.com">
+                    <label>Observações Adicionais (Opcional)</label>
+                    <textarea rows="2" placeholder="Ex: Cálculo de horas extras com reflexos em DSR..."></textarea>
                 </div>
-                <div class="group">
-                    <label>Telefone / WhatsApp</label>
-                    <input type="tel" placeholder="(00) 00000-0000">
-                </div>
-            </div>
 
-            <div class="group">
-                <label>Observações Adicionais (Opcional)</label>
-                <textarea rows="2" placeholder="Ex: Cálculo de horas extras com reflexos em DSR..."></textarea>
+                <button type="button" class="btn-budget">
+                    <i class="fas fa-paper-plane"></i> Solicitar Orçamento de Cálculo
+                </button>
             </div>
-
-            <button type="button" class="btn-budget">
-                <i class="fas fa-paper-plane"></i> Solicitar Orçamento de Cálculo
-            </button>
-        </div>
-    </section>
+        </section>
+    </form>
 
 
     <section class="container news-section">
