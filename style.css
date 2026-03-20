@@ -176,3 +176,52 @@ body {
     font-weight: 700;
 }
 
+/* Estilo para a Seção de Destaque (PJe-Calc) */
+.highlight-section {
+    background: #fffdf5 !important; /* Amarelo bem claro para destaque */
+    border: 2px solid var(--accent) !important;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.1);
+}
+
+.section-description {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.label-urgent {
+    color: #b91c1c !important; /* Vermelho para indicar urgência no prazo */
+}
+
+/* Botão Específico para Orçamento */
+.btn-budget {
+    background: #047857; /* Verde Esmeralda (Remete a sucesso/dinheiro/cálculo) */
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.btn-budget:hover {
+    background: #065f46;
+    transform: translateY(-2px);
+}
+
+/* --- RESPONSIVIDADE PJE-CALC --- */
+
+@media (max-width: 768px) {
+    .highlight-section .form-row {
+        flex-direction: column;
+    }
+    
+    .btn-budget {
+        padding: 18px;
+        font-size: 0.95rem;
+    }
+}
