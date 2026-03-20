@@ -1,7 +1,7 @@
 /* Configurações Gerais */
 :root {
-    --primary: #0f172a;    
-    --accent: #c5a059;     
+    --primary: #0f172a;
+    --accent: #c5a059;
     --bg: #f1f5f9;
     --white: #ffffff;
     --text-main: #1e293b;
@@ -10,16 +10,25 @@
     --transition: all 0.3s ease-in-out;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: var(--text-main);
     line-height: 1.6;
+
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 
 /* --- SEÇÃO DE NOTÍCIAS --- */
 .news-section {
@@ -56,15 +65,18 @@ body {
 /* Grid de Notícias */
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 colunas no desktop */
     gap: 25px;
+    text-align: justify;
+
 }
 
 .news-card {
     background: var(--white);
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     border-top: 4px solid var(--border);
     display: flex;
     flex-direction: column;
@@ -73,7 +85,7 @@ body {
 
 .news-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     border-top-color: var(--accent);
 }
 
@@ -88,9 +100,21 @@ body {
 }
 
 /* Cores das Tags Jurídicas */
-.tag-stf { background-color: #1e3a8a; } /* Azul Escuro */
-.tag-stj { background-color: #0369a1; } /* Azul */
-.tag-tst { background-color: #047857; } /* Verde */
+.tag-stf {
+    background-color: #1e3a8a;
+}
+
+/* Azul Escuro */
+.tag-stj {
+    background-color: #0369a1;
+}
+
+/* Azul */
+.tag-tst {
+    background-color: #047857;
+}
+
+/* Verde */
 
 .news-card h4 {
     font-size: 1.1rem;
@@ -102,7 +126,8 @@ body {
 .news-card p {
     font-size: 0.9rem;
     color: var(--text-muted);
-    flex-grow: 1; /* Garante que o texto ocupe o espaço e alinhe o footer */
+    flex-grow: 1;
+    /* Garante que o texto ocupe o espaço e alinhe o footer */
     margin-bottom: 20px;
 }
 
@@ -120,4 +145,3 @@ body {
     text-decoration: none;
     font-weight: 700;
 }
-
